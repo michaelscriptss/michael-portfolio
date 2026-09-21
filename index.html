@@ -3,307 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Thomas — Discord Bot Developer</title>
-  <meta name="description" content="Portfolio of Michael Thomas, Discord bot developer at delivrroblox.net" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Michael Thomas</title>
+  <meta name="description" content="Discord bot developer at delivrroblox.net" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ============ NAVBAR ============ -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="#home" class="logo">
-        <span class="logo-mark">MT</span>
-        <span class="logo-text">Michael Thomas</span>
-      </a>
-      <nav class="nav-links">
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" id="brand">—</a>
+      <nav class="links">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
         <a href="#projects">Projects</a>
-        <a href="#contact" class="btn-nav">Contact</a>
+        <a href="#contact" class="cta">Contact</a>
       </nav>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
-  <!-- ============ HERO ============ -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <span class="badge">● Available for collaborations</span>
-        <h1>
-          Hi, I'm <span class="gradient-text">Michael Thomas</span>
-        </h1>
-        <h2 class="hero-subtitle">
-          <span class="typewriter" id="typewriter"></span>
-        </h2>
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow" id="heroEyebrow"></p>
+        <h1 class="hero-title" id="heroTitle"></h1>
         <p class="hero-bio" id="heroBio"></p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
-        </div>
+        <div class="hero-actions" id="heroActions"></div>
         <div class="hero-socials" id="heroSocials"></div>
       </div>
+    </section>
 
-      <div class="hero-visual">
-        <div class="code-card">
-          <div class="code-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="code-title">bot.py</span>
-          </div>
-          <pre class="code-body"><code><span class="c-keyword">import</span> discord
-<span class="c-keyword">from</span> discord.ext <span class="c-keyword">import</span> commands
-
-<span class="c-keyword">class</span> <span class="c-class">MyBot</span>(commands.Bot):
-    <span class="c-keyword">async def</span> <span class="c-func">on_ready</span>(self):
-        <span class="c-func">print</span>(<span class="c-string">f"Logged in as {self.user}"</span>)
-
-bot = <span class="c-class">MyBot</span>(command_prefix=<span class="c-string">"!"</span>)
-bot.run(<span class="c-string">"TOKEN"</span>)</code></pre>
-        </div>
-        <div class="glow"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">01 — About</span>
-        <h2 class="section-title">About Me</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <img id="aboutAvatar" class="about-avatar" alt="Michael Thomas" />
-          <div class="about-meta">
-            <h3 id="aboutName"></h3>
-            <p id="aboutRole" class="muted"></p>
-            <p id="aboutLocation" class="muted small"></p>
-          </div>
-        </div>
-        <div class="about-content">
-          <p id="aboutBio"></p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">3+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">20+</span>
-              <span class="stat-label">Bots Built</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">50+</span>
-              <span class="stat-label">Happy Clients</span>
-            </div>
-          </div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2 class="section-title">About</h2>
+        <div class="about-grid">
+          <img class="avatar" id="avatar" alt="" />
+          <div class="about-text" id="aboutText"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ SKILLS ============ -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">02 — Skills</span>
-        <h2 class="section-title">Tech Stack</h2>
+    <!-- SKILLS -->
+    <section class="section skills-section">
+      <div class="wrap">
+        <h2 class="section-title">Stack</h2>
+        <ul class="skills" id="skills"></ul>
       </div>
-      <div class="skills-grid" id="skillsGrid"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ EXPERIENCE ============ -->
-  <section id="experience" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">03 — Experience</span>
-        <h2 class="section-title">Where I've Worked</h2>
+    <!-- EXPERIENCE -->
+    <section id="work" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Work</h2>
+        <div class="timeline" id="timeline"></div>
       </div>
-      <div class="timeline" id="timeline"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ PROJECTS ============ -->
-  <section id="projects" class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">04 — Projects</span>
-        <h2 class="section-title">Featured Work</h2>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects" id="projects-list"></div>
       </div>
-      <div class="projects-grid" id="projectsGrid"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="contact-card">
-        <span class="section-tag">05 — Contact</span>
-        <h2 class="section-title">Let's Build Something</h2>
-        <p class="contact-sub">
-          Got a project in mind or want to collaborate on a Discord bot?
-          Drop me a message — I'm always open to new opportunities.
-        </p>
-        <a id="contactEmail" href="#" class="btn btn-primary btn-large">Say Hello 👋</a>
-        <div class="contact-socials" id="contactSocials"></div>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="wrap">
+        <h2 class="section-title" id="contactHeading"></h2>
+        <p class="contact-text" id="contactText"></p>
+        <a class="contact-btn" id="contactBtn"></a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ FOOTER ============ -->
+  </main>
+
   <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Michael Thomas. Built with HTML & CSS.</p>
-      <p class="footer-company">
-        Currently at <a id="footerCompany" href="#" target="_blank" rel="noopener"></a>
-      </p>
+    <div class="wrap footer-inner">
+      <p id="footerNote"></p>
+      <p id="footerYear"></p>
     </div>
   </footer>
 
-  <script src="data.js"></script>
-  <script>
-    /* ---------- Render portfolio from data.js ---------- */
-    document.addEventListener('DOMContentLoaded', () => {
-      const d = portfolioData;
-
-      // Hero
-      document.getElementById('heroBio').textContent = d.profile.bio;
-      document.getElementById('aboutAvatar').src = d.profile.avatar;
-      document.getElementById('aboutName').textContent = d.profile.name;
-      document.getElementById('aboutRole').textContent = d.profile.title;
-      document.getElementById('aboutLocation').textContent = '📍 ' + d.profile.location;
-      document.getElementById('aboutBio').textContent = d.profile.bio;
-
-      // Typewriter effect
-      const roles = [
-        d.profile.title,
-        "Python Enthusiast",
-        "Bot Architect",
-        "at " + d.profile.company
-      ];
-      const tw = document.getElementById('typewriter');
-      let i = 0, j = 0, deleting = false;
-      function type() {
-        const current = roles[i];
-        tw.textContent = deleting
-          ? current.substring(0, j--)
-          : current.substring(0, j++);
-        if (!deleting && j === current.length + 1) {
-          deleting = true; setTimeout(type, 1600); return;
-        }
-        if (deleting && j === 0) {
-          deleting = false; i = (i + 1) % roles.length;
-        }
-        setTimeout(type, deleting ? 40 : 80);
-      }
-      type();
-
-      // Socials
-      const socialIcons = {
-        github:   'GH',
-        twitter:  'TW',
-        linkedin: 'IN'
-      };
-      const heroSocials = document.getElementById('heroSocials');
-      const contactSocials = document.getElementById('contactSocials');
-      Object.entries(d.profile.socials).forEach(([key, url]) => {
-        if (!url) return;
-        const a = document.createElement('a');
-        a.href = url;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        a.className = 'social-btn';
-        a.textContent = socialIcons[key] || key;
-        a.title = key;
-        heroSocials.appendChild(a);
-        contactSocials.appendChild(a.cloneNode(true));
-      });
-
-      // Email
-      document.getElementById('contactEmail').href = 'mailto:' + d.profile.email;
-      document.getElementById('footerCompany').href = d.profile.companyUrl;
-      document.getElementById('footerCompany').textContent = d.profile.company;
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // Skills
-      const skillsGrid = document.getElementById('skillsGrid');
-      skillsGrid.innerHTML = d.skills.map(s => `
-        <div class="skill">
-          <div class="skill-head">
-            <span class="skill-name">${s.name}</span>
-            <span class="skill-level">${s.level}%</span>
-          </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w:${s.level}%"></div></div>
-        </div>
-      `).join('');
-
-      // Experience
-      const timeline = document.getElementById('timeline');
-      timeline.innerHTML = d.experiences.map(e => `
-        <div class="timeline-item ${e.current ? 'current' : ''}">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-head">
-              <div>
-                <h3 class="timeline-role">${e.role}</h3>
-                <a class="timeline-company" href="${e.companyUrl || '#'}" ${e.companyUrl ? 'target="_blank" rel="noopener"' : ''}>${e.company}</a>
-              </div>
-              <span class="timeline-period">${e.period}</span>
-            </div>
-            <p class="timeline-desc">${e.description}</p>
-            <div class="tech-tags">
-              ${e.technologies.map(t => `<span class="tag">${t}</span>`).join('')}
-            </div>
-          </div>
-        </div>
-      `).join('');
-
-      // Projects
-      const projectsGrid = document.getElementById('projectsGrid');
-      projectsGrid.innerHTML = d.projects.map(p => `
-        <article class="project-card ${p.featured ? 'featured' : ''}">
-          ${p.featured ? '<span class="featured-badge">★ Featured</span>' : ''}
-          <h3 class="project-title">${p.title}</h3>
-          <p class="project-desc">${p.description}</p>
-          <div class="tech-tags">
-            ${p.technologies.map(t => `<span class="tag">${t}</span>`).join('')}
-          </div>
-          ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="project-link">View Project →</a>` : ''}
-        </article>
-      `).join('');
-
-      // Mobile nav
-      const toggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-        toggle.classList.toggle('active');
-      });
-      navLinks.querySelectorAll('a').forEach(a =>
-        a.addEventListener('click', () => navLinks.classList.remove('open'))
-      );
-
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', ev => {
-          const target = document.querySelector(a.getAttribute('href'));
-          if (target) {
-            ev.preventDefault();
-            window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-          }
-        });
-      });
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
