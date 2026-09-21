@@ -51,7 +51,7 @@
       "current": true,
       "description": "Creating ERLC tools & automation.",
       "stack": ["discord.py", "PostgreSQL"]
-    },
+    }
   ],
   "projects": [
     {
